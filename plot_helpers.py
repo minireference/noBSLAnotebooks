@@ -1,9 +1,7 @@
-
 from matplotlib.patches import FancyArrowPatch
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import proj3d
-
-from sympy import Matrix, MatrixBase
+import numpy as np
 
 # Helper functions for plotting vectors, lines, and planes using matplotlib
 #
@@ -17,9 +15,9 @@ def plot_vec(vec, at=[0,0,0], color='k'):
     Plot the 2d or 3d vector `vec`, which can be a SymPy Matrix, a numpy array,
     or a python list.
     """
-    # if isinstance(v,MatrixBase)
     if len(vec) == 3:
         ax = plt.gca(projection='3d')
+        ax.set_aspect("equal")
         vec_x = float(vec[0])
         vec_y = float(vec[1])
         vec_z = float(vec[2])
@@ -33,6 +31,7 @@ def plot_vec(vec, at=[0,0,0], color='k'):
         ax.add_artist(a)
     elif len(vec) == 2:
         ax = plt.gca()
+        ax.set_aspect("equal")
         vec_x = float(vec[0])
         vec_y = float(vec[1])
         a = Arrow2D([at[0], vec_x],
@@ -48,25 +47,71 @@ def plot_vec(vec, at=[0,0,0], color='k'):
 
 def plot_vecs(*args):
     """Plot each of the vectors in the arugment list in a different color."""
-    colors = ['k', 'b', 'g', 'r', 'c', 'm']
+    COLORS = ['k', 'b', 'g', 'r', 'c', 'm']
     for i, vec in enumerate(args):
-        plot_vec(vec, color=colors[i%len(colors)])
+        plot_vec(vec, color=COLORS[i%len(COLORS)])
 
 
-def plot_line(dir_vec, point):
+def plot_line(dir_vec, point, color=None):
     """
     Plots the line with direction vector `dir_vec` passing though `point`.
     """
-    pass
+    if len(dir_vec) == 3:
+        ax = plt.gca(projection='3d')
+        ax.set_aspect("equal")
+        dir_vec_x = float(dir_vec[0])
+        dir_vec_y = float(dir_vec[1])
+        dir_vec_z = float(dir_vec[2])
+        point_x = float(point[0])
+        point_y = float(point[1])
+        point_z = float(point[2])
+        s = (np.linspace(-5, 5, 100) - point_x)/dir_vec_x
+        x = point_x + dir_vec_x*s
+        y = point_y + dir_vec_y*s
+        z = point_z + dir_vec_z*s
+        ax.plot(x, y, z, color=color)
+    if len(dir_vec) == 2:
+        ax = plt.gca()
+        ax.set_aspect("equal")
+        dir_vec_x = float(dir_vec[0])
+        dir_vec_y = float(dir_vec[1])
+        point_x = float(point[0])
+        point_y = float(point[1])
+        s = (np.linspace(-5, 5, 100) - point_x)/dir_vec_x
+        x = point_x + dir_vec_x*s
+        y = point_y + dir_vec_y*s
+        ax.plot(x, y, color=color)
 
 
-def plot_plane(normal, d):
+def plot_plane(normal, d, color=None, xrange=[-5,5], yrange=[-5,5]):
     """
     Plots the plane whose general equation is normal . (x,y,z) = d.
     If normal is a 2-vector, plots a line (2D plot).
     """
-    pass
-
+    if len(normal) == 3:
+        ax = plt.gca(projection='3d')
+        ax.set_aspect("equal")
+        normal_x = float(normal[0])
+        normal_y = float(normal[1])
+        normal_z = float(normal[2])
+        d = float(d)
+        x = np.linspace(xrange[0], xrange[1], 100)
+        y = np.linspace(yrange[0], yrange[1], 100)
+        X, Y = np.meshgrid(x,y)
+        if color is None:
+            color_picker = PlaneColorPicker()
+            color = color_picker.get_color()
+        Z = (d - normal_x*X - normal_y*Y)/normal_z
+        ax.plot_surface(X, Y, Z, color=color, alpha=0.2)
+    if len(normal) == 2:
+        ax = plt.gca()
+        ax.set_aspect("equal")
+        normal_x = float(normal[0])
+        normal_y = float(normal[1])
+        d = float(d)
+        x = np.linspace(xrange[0], xrange[1], 100)
+        y = (d - normal_x*x)/normal_y
+        ax.plot(x, y, color=color)
 
 
 # IMPLEMENTATION DETAILS
@@ -143,4 +188,23 @@ def autoscale_arrows(ax=None):
         ax.set_xlim(min_x, min_x + square_side)
         ax.set_ylim(min_y, min_y + square_side)
 
+
+class PlaneColorPicker:
+    """
+    A singleton class that cycles through the colors used for drawing planes.
+    """
+    COLORS = ['b', 'g', 'r', 'c', 'm', 'k']
+    instance = None
+    class __PlaneColorPicker:
+        def __init__(self, start_index):
+            self.color_index = start_index
+        def __get_color(self):
+            cur = self.color_index
+            self.color_index = (cur + 1) % len(PlaneColorPicker.COLORS)
+            return PlaneColorPicker.COLORS[cur]
+    def __init__(self, start=0):
+        if not PlaneColorPicker.instance:
+            PlaneColorPicker.instance = PlaneColorPicker.__PlaneColorPicker(start)
+    def get_color(self):
+        return self.instance.__get_color()
 
