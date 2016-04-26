@@ -7,8 +7,16 @@ import numpy as np
 #
 # Design
 # ------
-# We want to have functions `plot_vec`, `plot_line`, `plot_plane` that are easy
-# to use and can handle both 2D and 3D SymPy Matrix inputs. 
+# We want to have functions `plot_point`, `plot_vec`, `plot_line`, `plot_plane`
+# that are easy to use and can handle both 2D and 3D SymPy Matrix inputs.
+
+def plot_point(point, color='k'):
+    """
+    Plot the 2d or 3d input `point` as a solid dot on the graph.
+    """
+    # TODO: implement me...
+    pass
+
 
 def plot_vec(vec, at=[0,0,0], color='k'):
     """
@@ -112,6 +120,34 @@ def plot_plane(normal, d, color=None, xrange=[-5,5], yrange=[-5,5]):
         x = np.linspace(xrange[0], xrange[1], 100)
         y = (d - normal_x*x)/normal_y
         ax.plot(x, y, color=color)
+
+
+# CHAPTER 4: COMPUTATIONAL LINEAR ALGERBA
+################################################################################
+
+def plot_augmat(AUG):
+    """
+    Visualize of the augmented matrix `AUG` geometrically as the interseciton
+    of goemterical objects:
+      - Intersection of lines in 2D   (when AUG has three cols)
+      - Intersection of planes in 3D  (when AUG has four cols)
+    """
+    if AUG.cols == 3:
+        # An Mx3 augemented matrix represents lines in the cartesian plane
+        for i in range(AUG.rows):
+            line = AUG[i,:]
+            template = 'Line {0:d}:  {1:d}x {2:+d}y = {3:d}'
+            print(template.format(i+1, *map(int,line)))
+            plot_plane(line[0:2], line[2])
+    if AUG.cols == 4:
+        # An Mx4 augmented matrix represents planes in 3D
+        for i in range(AUG.rows):
+            plane = AUG[i,:]
+            normal = plane[0:3]
+            d = plane[3]
+            template = 'Plane {0:d}:  {1:d}x {2:+d}y {3:+d}z = {4:d}'
+            print(template.format(i+1, *map(int,plane)))
+            plot_plane(normal, d)
 
 
 # IMPLEMENTATION DETAILS
