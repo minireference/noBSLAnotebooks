@@ -2,6 +2,7 @@ No bullshit guide to linear algebra notebooks
 =============================================
 Jupyter notebooks with exercises for the [*No bullshit guide to linear algebra*](https://gum.co/noBSLA).
 
+I recommend you **watch the videos at 2x speed** if you want them to be interesting ;)
 
 
 Contents

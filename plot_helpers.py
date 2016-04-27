@@ -26,28 +26,21 @@ def plot_vec(vec, at=[0,0,0], color='k'):
     if len(vec) == 3:
         ax = plt.gca(projection='3d')
         ax.set_aspect("equal")
-        vec_x = float(vec[0])
-        vec_y = float(vec[1])
-        vec_z = float(vec[2])
-        a = Arrow3D([at[0], vec_x],
-                    [at[1], vec_y],
-                    [at[2], vec_z],
-                    mutation_scale=20,
-                    lw=1,
-                    arrowstyle="-|>",
-                    color=color)
+        vec_x, vec_y, vec_z = float(vec[0]), float(vec[1]), float(vec[2])
+        at_x, at_y, at_z = float(at[0]), float(at[1]), float(at[2])
+        a = Arrow3D([at_x, at_x + vec_x],
+                    [at_y, at_y + vec_y],
+                    [at_z, at_z + vec_z],
+                    mutation_scale=20, lw=1, arrowstyle="-|>", color=color)
         ax.add_artist(a)
     elif len(vec) == 2:
         ax = plt.gca()
         ax.set_aspect("equal")
-        vec_x = float(vec[0])
-        vec_y = float(vec[1])
-        a = Arrow2D([at[0], vec_x],
-                    [at[1], vec_y],
-                    mutation_scale=20,
-                    lw=1,
-                    arrowstyle="-|>",
-                    color=color)
+        vec_x, vec_y = float(vec[0]), float(vec[1])
+        at_x, at_y = float(at[0]), float(at[1])
+        a = Arrow2D([at_x, at_x + vec_x],
+                    [at_y, at_y + vec_y],
+                    mutation_scale=20, lw=1, arrowstyle="-|>", color=color)
         ax.add_artist(a)
     else:
         print('Error: plot_vec supports only 2D and 3D vectors.')
