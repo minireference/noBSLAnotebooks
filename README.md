@@ -17,7 +17,7 @@ Video: https://www.youtube.com/watch?v=RLvLt6DQct8
 Notebook: [chapter03_linearity_intuition.ipynb](./chapter03_linearity_intuition.ipynb)
 
 ### Ch4: Gauss-Jordan elimination and Reduced row echelon form 
-Video: (soon)  
+Video: https://www.youtube.com/watch?v=tfC6KMsRP8w
 Notebook: [chapter04_exercises.ipynb](./chapter04_exercises.ipynb)
 
 ### Ch4: Problems
