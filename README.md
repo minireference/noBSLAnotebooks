@@ -3,7 +3,7 @@ No bullshit guide to linear algebra notebooks
 
 Jupyter notebooks with exercises for the [*No bullshit guide to linear algebra*](https://gum.co/noBSLA).
 
-I recommend you **watch the videos at 1.5x speed** if you want them to be interesting ;)
+I recommend you **watch the videos at 1.5x speed** to make them more interesting ;)
 
 Abstract
 --------
@@ -39,15 +39,27 @@ Notebook: [chapter04_exercises.ipynb](./chapter04_exercises.ipynb)
 Notebook: [chapter04_problems.ipynb](./chapter04_problems.ipynb)
 
 
-
 Other stuff
 -----------
 
-    Vector fields 2D.ipynb                      nice examples of vector fields (can be used for vector calc)
-    python_basics_zero_based_indexing.ipynb     Python uses 0-based indexing    
-    plot_helpers.py          utility functions for potting vectors, lines, and planes
-    plotting_work.ipynb      example usage for plot_helpers
-    requirements.txt         python packages required for running thes eon your computer
+    cut_material/               Less interesting things lessons, and testing
+       python_basics_zero_based_indexing.ipynb
+       plotting_work.ipynb      example usage for plot_helpers
+       Linear_algebra_overview_proj_example.ipynb   first draft of Overview notebook
+    
+    extra/
+       Determinants.ipynb                       Determinant formula from first principles
+       Vector fields 2D.ipynb                   examples of vector fields (can be used for vector calc)
+       jupyter widgets math demo.ipynb          example interactives in notebook
+       python_basics_zero_based_indexing.ipynb  
+    
+    requirements.txt            python packages required to tun these notebooks
+    
+    util/                       Utility and support functions
+       md_to_ipynb_helper.ipynb convert an outline (markdown list) to notebook cells
+       notebook_helpers.py      used in above
+       plot_helpers.py          functions for potting vectors, lines, and planes
+
 
 
 Install
