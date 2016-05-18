@@ -3,8 +3,6 @@ No bullshit guide to linear algebra notebooks
 
 Jupyter notebooks with exercises for the [*No bullshit guide to linear algebra*](https://gum.co/noBSLA).
 
-I recommend you **watch the videos at 1.5x speed** to make them more interesting ;)
-
 Abstract
 --------
 Linear algebra is the study of vectors and linear transformations.
@@ -24,15 +22,15 @@ Video: https://www.youtube.com/watch?v=2G3PmEZI6n8
 Notebook: [Linear_algebra_chapters_overview.ipynb](./Linear_algebra_chapters_overview.ipynb) 
 
 ### Ch3: Definitions of vectors and matrices
-Video: https://www.youtube.com/watch?v=IjyKTvhWG70  
+Video: https://www.youtube.com/watch?v=5ohBydRZvIU  
 Notebook: [chapter03_definitions.ipynb](./chapter03_definitions.ipynb)
 
 ### Ch3: Linearity
-Video: https://www.youtube.com/watch?v=RLvLt6DQct8  
+Video: https://www.youtube.com/watch?v=WfrwVMTgrfc  
 Notebook: [chapter03_linearity_intuition.ipynb](./chapter03_linearity_intuition.ipynb)
 
 ### Ch4: Gauss-Jordan elimination and Reduced row echelon form 
-Video: https://www.youtube.com/watch?v=tfC6KMsRP8w  
+Video: https://www.youtube.com/watch?v=Lfz27_MK-5M  
 Notebook: [chapter04_exercises.ipynb](./chapter04_exercises.ipynb)
 
 ### Ch4: Problems 
