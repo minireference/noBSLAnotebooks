@@ -19,21 +19,24 @@ Contents
 --------
 ### Chapters overview
 Video: https://www.youtube.com/watch?v=2G3PmEZI6n8  
-Notebook: [Linear_algebra_chapters_overview.ipynb](./Linear_algebra_chapters_overview.ipynb) 
+Notebook: [Linear_algebra_chapters_overview.ipynb](./Linear_algebra_chapters_overview.ipynb)
 
-### Ch3: Definitions of vectors and matrices
+### Ch2: Definitions of vectors and matrices
 Video: https://www.youtube.com/watch?v=5ohBydRZvIU  
-Notebook: [chapter03_definitions.ipynb](./chapter03_definitions.ipynb)
+Notebook: [chapter02_definitions.ipynb](./chapter02_definitions.ipynb)
 
-### Ch3: Linearity
+### Ch2: Linearity
 Video: https://www.youtube.com/watch?v=WfrwVMTgrfc  
-Notebook: [chapter03_linearity_intuition.ipynb](./chapter03_linearity_intuition.ipynb)
+Notebook: [chapter02_linearity_intuition.ipynb](./chapter02_linearity_intuition.ipynb)
 
-### Ch4: Gauss-Jordan elimination and Reduced row echelon form 
+### Ch3: Gauss-Jordan elimination and Reduced row echelon form
 Video: https://www.youtube.com/watch?v=Lfz27_MK-5M  
-Notebook: [chapter04_exercises.ipynb](./chapter04_exercises.ipynb)
+Notebook: [chapter03_exercises.ipynb](./chapter03_exercises.ipynb)
 
-### Ch4: Problems 
+### Ch3: Problems
+Notebook: [chapter03_problems.ipynb](./chapter03_problems.ipynb)
+
+### Ch4: Problems
 Notebook: [chapter04_problems.ipynb](./chapter04_problems.ipynb)
 
 
@@ -44,15 +47,15 @@ Other stuff
        python_basics_zero_based_indexing.ipynb
        plotting_work.ipynb      example usage for plot_helpers
        Linear_algebra_overview_proj_example.ipynb   first draft of Overview notebook
-    
+
     extra/
        Determinants.ipynb                       Determinant formula from first principles
        Vector fields 2D.ipynb                   examples of vector fields (can be used for vector calc)
        jupyter widgets math demo.ipynb          example interactives in notebook
        python_basics_zero_based_indexing.ipynb  
-    
+
     requirements.txt            python packages required to tun these notebooks
-    
+
     util/                       Utility and support functions
        md_to_ipynb_helper.ipynb convert an outline (markdown list) to notebook cells
        notebook_helpers.py      used in above
