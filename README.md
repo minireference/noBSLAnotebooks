@@ -67,16 +67,17 @@ Install
 -------
 Create a virtual env and install the packages from `requirements.txt`:
 
-    virtualenv  -p python3.5 pydev
-    source pydev/bin/activate
+    virtualenv -p python3 venv
+    source venv/bin/activate
     pip install -r requirements.txt
 
 
 Running
 -------
-Just start the jupyter notebook server:
+Start the jupyter notebook server using
 
     source pydev/bin/activate
     jupyter notebook
 
-then access the notebooks using your favourite browser.
+then click on the link printed in the terminal to open access
+the notebook interface in your web browser.
