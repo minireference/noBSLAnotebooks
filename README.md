@@ -12,7 +12,7 @@ them very well, and also study the types of functions you can apply to vectors.
 In particular we'll study the linear transformations, which are functions that
 take vectors as inputs and produce vectors as outputs.
 Linear transformations can be represented by matrices, thus we can also say that
-linear algebra is the study of vectors and matrices.
+linear algebra is the study of vectors and matrices. 
 
 
 Contents
