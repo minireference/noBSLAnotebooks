@@ -229,14 +229,57 @@ def cells():
     '''
     '''
 
+    '''
+    ### E3.5
+    
+    Compute the following matrix products:
+    $$
+    P = 
+    \begin{bmatrix} 	1&2 \\   3&4  \end{bmatrix}
+    \begin{bmatrix} 	5&6 \\   7&8  \end{bmatrix}
+    \quad
+    \textrm{and}
+    \quad
+    Q = 
+    \begin{bmatrix}	
+    3& 1 &  2&  2 \\ 0 & 2 & -2 & 1
+    \end{bmatrix}\!\!		% 
+    \begin{bmatrix}
+        -2 &  3 \\  
+        \ \ 1 &  0 \\  
+        -2 & \!\!-2 \\  
+        \ \ 2 &  2 
+      \end{bmatrix}\!.
+    $$
+    '''
 
     '''
     '''
 
+    # define matrices
+    P1 = Matrix([
+        [1, 2],
+        [3, 4]])
+    P2 = Matrix([
+        [5, 6],
+        [7, 8]])
+    
+    P = P1*P2
+    P
 
     '''
     '''
 
+    # define matrices
+    Q1 = Matrix([[3, 1,  2, 2],
+                 [0, 2, -2, 1]])
+    Q2 = Matrix([[-2,  3],
+                 [ 1,  0],
+                 [-2, -2],
+                 [ 2,  2]])
+    
+    Q = Q1*Q2
+    Q
 
     '''
     '''
