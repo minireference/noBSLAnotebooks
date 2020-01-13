@@ -1,9 +1,8 @@
 # main tool for symbolic math
-sympy==1.1.1
+sympy==1.5.1
 
 # for plotting graphs
-#matplotlib==1.5.1
-matplotlib==2.2.2
+matplotlib==2.2.4
 
 # notebook interface
 jupyter==1.0.0

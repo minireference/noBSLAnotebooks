@@ -13,6 +13,93 @@ def cells():
     '''
 
     '''
+    ### E4.5
+    
+    '''
+
+    '''
+    '''
+
+    # Given point r
+    r = Point([1,3,0])
+    
+    # line L
+    pL = Point([0,0,2])
+    vL = Vector([1,-1,0])  # note this changed in v2.2 of LA book
+    
+    # plane P
+    nP = Vector([1,1,1])
+    dP = 1
+    
+    # compute the following closest distances:
+
+    '''
+    '''
+
+    # a)  d(r,O) = ||r||
+    r.norm()
+
+    '''
+    '''
+
+    # b)   d(L,O) = || pL - proj_{L}(pL) ||
+    (pL - (pL.dot(vL)/vL.norm()**2)*vL).norm()
+
+    '''
+    '''
+
+    # c)   d(P,O) = || proj_{nP}(pP) ||
+    pP = Matrix([1,0,0])
+    ( (nP.dot(pP)/nP.norm()**2)*nP).norm()
+
+    '''
+    '''
+
+    # d)   u=pL-r   d(r,L)=||u - proj_{L}(u)||
+    u = pL - r
+    (u - (u.dot(vL)/vL.norm()**2)*vL).norm()
+
+    '''
+    '''
+
+    # e)     v=pP-r   d(r,P)=||proj_{nP}(v)||
+    pP = Matrix([1,0,0])
+    v = pP - r
+    ( (nP.dot(v)/nP.norm()**2)*nP).norm()
+
+    '''
+    '''
+
+    #f)  d(L,P)
+    # STEP1: check relative orientation of L and P
+    print('vL·nP =', vL.dot(nP), 'so line is parallel to plane. OK to proceed...')
+    # STEP2: find vector w=pP-pL arbitrary points on plane nad line,
+    pP = Matrix([1,0,0])
+    w = pP - pL
+    # then compute component of w in perp. to the plane    d(L,P)=||proj_{nP}(w)||
+    ( (nP.dot(w)/nP.norm()**2)*nP).norm()
+
+    '''
+    '''
+
+    # # debug viz to make sure L parallel to P
+    # plot_vec(5*vL, at=pL, color='b')
+    # plot_vec(-5*vL, at=pL, color='b')
+    # plot_vec(w, color='r', at=pL)
+    # plot_plane(nP,dP)
+
+    '''
+    '''
+
+
+    '''
+    '''
+
+
+    '''
+    '''
+
+    '''
     ### E4.7
     '''
 
