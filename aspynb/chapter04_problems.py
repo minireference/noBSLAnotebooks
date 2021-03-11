@@ -17,6 +17,67 @@ def cells():
     '''
 
     '''
+    ## P4.2
+    
+    Find the lines of intersection between these pairs of planes:  
+    **a)** $P_1$: $3x-2y-z=2$ and $P_2$: $x+2y+z=0$,  
+    **b)** $P_3$: $2x+y-z=0$ and $P_4$: $x+2y+z=3$.
+    
+    <!--
+    		\begin{answer}\textbf{a)}~;
+    					\textbf{b)}~.\end{answer}
+    		%	A = Matrix([[1,-2,-1,2],[1,2,1,0]])
+    		%	A.rref()
+    		%	
+    -->
+    '''
+
+    '''
+    '''
+
+    # a)         x   y   z  | c 
+    A = Matrix([[3, -2, -1,   2],
+                [1,  2,  1,   0]])
+    A.rref()
+
+    '''
+    '''
+
+    '''
+    So $z=s$ is a free variable, and the rest of the equation
+    can be written as
+    
+    $$
+      \begin{array}{rl}
+      x                 &= \frac{1}{2}\\
+      y + \frac{1}{2}s  &= -\frac{1}{4}\\
+      z                 &= s
+      \end{array}
+    $$
+    
+    The answer is $(x,y,z) = (\frac{1}{2},-\frac{1}{4},0) + s(0,-\frac{1}{2},1),  \forall s \in \mathbb{R}$.
+    '''
+
+    '''
+    '''
+
+    # b)         x   y   z  | c 
+    B = Matrix([[2,  1, -1,   0],
+                [1,  2,  1,   3]])
+    B.rref()
+
+    '''
+    '''
+
+    '''
+    The free variable is $z=t$.
+    The answer to b) is $\{ (-1,2,0) + t(1,-1,1), \forall t \in \mathbb{R}\}$.
+    '''
+
+    '''
+    '''
+
+    '''
     ## P4.11
     '''
 
