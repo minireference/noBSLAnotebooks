@@ -1,11 +1,13 @@
 # main tool for symbolic math
-sympy==1.5.1
+sympy==1.8
 
 # for plotting graphs
-matplotlib==2.2.4
+matplotlib==3.3.4
 
 # notebook interface
 jupyter==1.0.0
+jedi==0.17.2
 
 # for export notebooks as regular py files
-pynb==0.1.36
+pynb==0.2.4 
+

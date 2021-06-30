@@ -65,10 +65,33 @@ def cells():
     '''
     '''
 
+    '''
+    Given the matrices $A=\begin{pmatrix}1 & 3 \\ 4 & 5\end{pmatrix}$ and $B=\begin{pmatrix} -1 & 0 \\ 3 & 3 \end{pmatrix}$, 
+    and the vectors $\vec{v}=\begin{pmatrix}1 \\  2\end{pmatrix}$ and $\vec{w}=\begin{pmatrix}-3 \\ -4\end{pmatrix}$,
+    compute the following expressions.
+    
+    - a) $A\vec{v}$
+    - b) $B\vec{v}$
+    - c) $A(B\vec{v})$
+    - d) $B(A\vec{v})$
+    - e) $A\vec{w}$
+    - f) $B\vec{w}$
+    '''
 
     '''
     '''
 
+    A = Matrix([[1,3],
+                [4,5]])
+    B = Matrix([[-1,0],
+                [ 3,3]])
+    v = Vector([[1,2]]).T
+
+    '''
+    '''
+
+    # d)
+    B*A*v
 
     '''
     '''

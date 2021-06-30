@@ -25,7 +25,7 @@ def plot_vec(vec, at=[0,0,0], color='k'):
     """
     if len(vec) == 3:
         ax = plt.gca(projection='3d')
-        ax.set_aspect("equal")
+        ax.set_aspect("auto")
         vec_x, vec_y, vec_z = float(vec[0]), float(vec[1]), float(vec[2])
         at_x, at_y, at_z = float(at[0]), float(at[1]), float(at[2])
         a = Arrow3D([at_x, at_x + vec_x],
@@ -59,7 +59,7 @@ def plot_line(dir_vec, point, color=None):
     """
     if len(dir_vec) == 3:
         ax = plt.gca(projection='3d')
-        ax.set_aspect("equal")
+        ax.set_aspect("auto")
         dir_vec_x = float(dir_vec[0])
         dir_vec_y = float(dir_vec[1])
         dir_vec_z = float(dir_vec[2])
@@ -91,7 +91,7 @@ def plot_plane(normal, d, color=None, xrange=[-5,5], yrange=[-5,5]):
     """
     if len(normal) == 3:
         ax = plt.gca(projection='3d')
-        ax.set_aspect("equal")
+        ax.set_aspect("auto")
         normal_x = float(normal[0])
         normal_y = float(normal[1])
         normal_z = float(normal[2])
