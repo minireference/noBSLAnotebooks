@@ -1,11 +1,19 @@
 def cells():
+    # Helper code needed when running on colab...
+    if 'google.colab' in str(get_ipython()):
+        print('Downloading plot_helpers.py to util/ (only neded for colab')
+        !mkdir util; wget https://raw.githubusercontent.com/minireference/noBSLAnotebooks/master/util/plot_helpers.py -P util
+
+    '''
+    '''
+
     # setup SymPy
     from sympy import *
     x, y, z, t = symbols('x y z t')
     init_printing()
     
     # setup plotting
-    %matplotlib notebook
+    %matplotlib inline
     import matplotlib.pyplot as mpl
     from util.plot_helpers import plot_vec, plot_vecs, autoscale_arrows
 
@@ -267,11 +275,11 @@ def cells():
     '''
 
     A = Matrix([
-            [a_11,a_12],
+            [a_11, a_12],
             [a_21, a_22], 
             [a_31, a_32]])
     B = Matrix([
-            [b_11,b_12],
+            [b_11, b_12],
             [b_21, b_22]])
     
     A*B
@@ -284,13 +292,13 @@ def cells():
     '''
     '''
 
-    print('the shape of v is ', v.shape)
+    print('the shape of v is', v.shape)
     v
 
     '''
     '''
 
-    print('the shape of v.T is ', v.T.shape)
+    print('the shape of v.T is', v.T.shape)
     v.T
 
     '''
@@ -310,8 +318,8 @@ def cells():
     '''
 
     A = Matrix([
-      [3,       3],
-      [2,  S(3)/2]
+            [3,       3],
+            [2,  S(3)/2]
     ])
     A
 
@@ -334,7 +342,7 @@ def cells():
     '''
 
     B = Matrix([
-            [b_11,b_12],
+            [b_11, b_12],
             [b_21, b_22]])
     B
 

@@ -23,7 +23,7 @@ Notebook: [Linear_algebra_chapters_overview.ipynb](./Linear_algebra_chapters_ove
 
 ### Ch2: Definitions of vectors and matrices
 Video: https://www.youtube.com/watch?v=5ohBydRZvIU  
-Notebook: [chapter02_definitions.ipynb](./chapter02_definitions.ipynb)
+Notebook: [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/minireference/noBSLAnotebooks/blob/master/chapter02_definitions.ipynb) or view [chapter02_definitions.ipynb](./chapter02_definitions.ipynb)
 
 ### Ch2: Linearity
 Video: https://www.youtube.com/watch?v=WfrwVMTgrfc  

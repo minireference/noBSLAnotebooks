@@ -1,4 +1,4 @@
-# main tool for symbolic math
+# main tool for symbolic math calculations
 sympy==1.8
 
 # for plotting graphs
@@ -8,6 +8,6 @@ matplotlib==3.3.4
 jupyter==1.0.0
 jedi==0.17.2
 
-# for export notebooks as regular py files
+# for export notebooks as regular py files (human-readable diffs)
 pynb==0.2.4 
 

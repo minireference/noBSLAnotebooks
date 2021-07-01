@@ -43,11 +43,13 @@ def plot_vec(vec, at=[0,0,0], color='k'):
                     mutation_scale=20, lw=1, arrowstyle="-|>", color=color)
         ax.add_artist(a)
     else:
-        print('Error: plot_vec supports only 2D and 3D vectors.')
+        print('plot_vec supports only 2D and 3D vectors.')
 
 
 def plot_vecs(*args):
-    """Plot each of the vectors in the arugment list in a different color."""
+    """
+    Plot each of the vectors in the arugment list in a different color.
+    """
     COLORS = ['k', 'b', 'g', 'r', 'c', 'm']
     for i, vec in enumerate(args):
         plot_vec(vec, color=COLORS[i%len(COLORS)])
@@ -71,7 +73,7 @@ def plot_line(dir_vec, point, color=None):
         y = point_y + dir_vec_y*s
         z = point_z + dir_vec_z*s
         ax.plot(x, y, z, color=color)
-    if len(dir_vec) == 2:
+    elif len(dir_vec) == 2:
         ax = plt.gca()
         ax.set_aspect("equal")
         dir_vec_x = float(dir_vec[0])
@@ -82,11 +84,13 @@ def plot_line(dir_vec, point, color=None):
         x = point_x + dir_vec_x*s
         y = point_y + dir_vec_y*s
         ax.plot(x, y, color=color)
+    else:
+        print('plot_line supports only 2D and 3D vectors.')
 
 
 def plot_plane(normal, d, color=None, xrange=[-5,5], yrange=[-5,5]):
     """
-    Plots the plane whose general equation is normal . (x,y,z) = d.
+    Plots the plane whose general equation is   normal . (x,y,z) = d.
     If normal is a 2-vector, plots a line (2D plot).
     """
     if len(normal) == 3:
@@ -104,7 +108,7 @@ def plot_plane(normal, d, color=None, xrange=[-5,5], yrange=[-5,5]):
             color = color_picker.get_color()
         Z = (d - normal_x*X - normal_y*Y)/normal_z
         ax.plot_surface(X, Y, Z, color=color, alpha=0.2)
-    if len(normal) == 2:
+    elif len(normal) == 2:
         ax = plt.gca()
         ax.set_aspect("equal")
         normal_x = float(normal[0])
@@ -113,6 +117,9 @@ def plot_plane(normal, d, color=None, xrange=[-5,5], yrange=[-5,5]):
         x = np.linspace(xrange[0], xrange[1], 100)
         y = (d - normal_x*x)/normal_y
         ax.plot(x, y, color=color)
+    else:
+        print('plot_plane supports only 2D and 3D vectors.')
+
 
 
 # CHAPTER 4: COMPUTATIONAL LINEAR ALGERBA
@@ -132,7 +139,7 @@ def plot_augmat(AUG):
             template = 'Line {0:d}:  {1:d}x {2:+d}y = {3:d}'
             print(template.format(i+1, *map(int,line)))
             plot_plane(line[0:2], line[2])
-    if AUG.cols == 4:
+    elif AUG.cols == 4:
         # An Mx4 augmented matrix represents planes in 3D
         for i in range(AUG.rows):
             plane = AUG[i,:]
@@ -141,13 +148,17 @@ def plot_augmat(AUG):
             template = 'Plane {0:d}:  {1:d}x {2:+d}y {3:+d}z = {4:d}'
             print(template.format(i+1, *map(int,plane)))
             plot_plane(normal, d)
+    else:
+        print('plot_augmat supports only lines and planes.')
 
 
 # IMPLEMENTATION DETAILS
 ################################################################################
 
 class Arrow3D(FancyArrowPatch):
-    """A 3D arrow used to represent vectors in 3D."""
+    """
+    A 3D arrow used to represent vectors in 3D.
+    """
     
     def __init__(self, xs, ys, zs, *args, **kwargs):
         FancyArrowPatch.__init__(self, (0,0), (0,0), *args, **kwargs)
@@ -161,7 +172,9 @@ class Arrow3D(FancyArrowPatch):
 
 
 class Arrow2D(FancyArrowPatch):
-    """A 2D arrow used to represent vectors in 2D."""
+    """
+    A 2D arrow used to represent vectors in 2D.
+    """
     
     def __init__(self, xs, ys, *args, **kwargs):
         self._verts2d = xs, ys
@@ -204,7 +217,7 @@ def autoscale_arrows(ax=None):
         ax.set_xlim(min_x, min_x + cube_side)
         ax.set_ylim(min_y, min_y + cube_side)
         ax.set_zlim(min_z, min_z + cube_side)
-    if arrow2Ds:
+    elif arrow2Ds:
         all_xs, all_ys = [], []
         for arrow in arrow2Ds:
             all_xs.append(arrow._verts2d[0][0])
