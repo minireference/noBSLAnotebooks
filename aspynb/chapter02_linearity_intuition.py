@@ -1,4 +1,11 @@
 def cells():
+    '''
+    # 2/ Linearity
+    '''
+
+    '''
+    '''
+
     # setup SymPy
     from sympy import *
     init_printing()
@@ -9,7 +16,7 @@ def cells():
     '''
 
     '''
-    # Linearity
+    ## Simplest linear function
     '''
 
     '''
@@ -151,7 +158,7 @@ def cells():
     '''
 
     '''
-    see page 113
+    see page 133 in v5.4 of the book
     '''
 
     '''

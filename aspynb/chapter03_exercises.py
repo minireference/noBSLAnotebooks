@@ -1,7 +1,15 @@
 def cells():
     '''
-    # Section 3.1 RREF exercises
+    # 3/ Exercises solutions
     '''
+
+    '''
+    '''
+
+    # helper code needed for running in colab
+    if 'google.colab' in str(get_ipython()):
+        print('Downloading plot_helpers.py to util/ (only neded for colab')
+        !mkdir util; wget https://raw.githubusercontent.com/minireference/noBSLAnotebooks/master/util/plot_helpers.py -P util
 
     '''
     '''
@@ -9,7 +17,7 @@ def cells():
     from sympy import *
     init_printing()
     
-    %matplotlib notebook
+    %matplotlib inline
     import matplotlib.pyplot as mpl
     from util.plot_helpers import plot_augmat # helper function
 
@@ -17,7 +25,7 @@ def cells():
     '''
 
     '''
-    ## RREF
+    ## RREF exercises
     '''
 
     '''
@@ -31,8 +39,8 @@ def cells():
     '''
 
     AUG = Matrix([
-      [3,      3, 6],
-      [2, S(3)/2, 5]])
+      [3,      3,  6],
+      [2, S(3)/2,  5]])
     AUG
 
     '''
@@ -52,8 +60,8 @@ def cells():
     '''
 
     AUG = Matrix([
-      [3,      3,  6],
-      [2, S(3)/2,  5]])
+      [3,      3,   6],
+      [2, S(3)/2,   5]])
     
     fig = mpl.figure()
     plot_augmat(AUG)
@@ -70,8 +78,8 @@ def cells():
     '''
 
     A = Matrix([
-             [3,       3,  6],
-             [2,  S(3)/2,  5]])
+             [3,      3,   6],
+             [2, S(3)/2,   5]])
     A
 
     '''
@@ -113,8 +121,8 @@ def cells():
     '''
 
     AUGA = Matrix([
-     [3, 3,  6],
-     [1, 1,  5]])
+     [3, 3,   6],
+     [1, 1,   5]])
     AUGA.rref()
     # no solutions since second row   0x+0y == 1  is impossible
 
@@ -123,8 +131,8 @@ def cells():
 
     # verify geomtetrically
     AUGA = Matrix([
-     [3, 3,  6],
-     [1, 1,  5]])
+     [3, 3,   6],
+     [1, 1,   5]])
     
     fig = mpl.figure()
     plot_augmat(AUGA)
@@ -138,8 +146,8 @@ def cells():
     '''
 
     AUGB = Matrix([
-      [3,     3,  6],
-      [2, S(3)/2, 3]])
+      [3,      3,    6],
+      [2, S(3)/2,    3]])
     AUGB.rref()
     # one solution x=0, y=2
 
@@ -148,8 +156,8 @@ def cells():
 
     # verify geomtetrically
     AUGB = Matrix([
-      [3,     3,  6],
-      [2, S(3)/2, 3]])
+      [3,      3,   6],
+      [2, S(3)/2,   3]])
     
     fig = mpl.figure()
     plot_augmat(AUGB)
@@ -264,6 +272,7 @@ def cells():
         [5, 6],
         [7, 8]])
     
+    # compute product
     P = P1*P2
     P
 
@@ -277,6 +286,10 @@ def cells():
                  [ 1,  0],
                  [-2, -2],
                  [ 2,  2]])
+    
+    # compute product
+    Q = Q1*Q2
+    Q
 
     '''
     '''

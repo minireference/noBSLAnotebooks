@@ -1,6 +1,6 @@
 def cells():
     '''
-    # 2/ Intro to linear algebra
+    # 2/ Exercise solutions
     '''
 
     '''
@@ -10,16 +10,6 @@ def cells():
     from sympy import *
     x, y, z, t = symbols('x y z t')
     init_printing()
-    
-    # setup plotting
-    %matplotlib notebook
-    import matplotlib.pyplot as mpl
-    from util.plot_helpers import plot_vec, plot_vecs, autoscale_arrows
-    from util.plot_helpers import plot_point, plot_line, plot_plane
-    from util.plot_helpers import plot_augmat
-    
-    # define alias Vector for Matrix objects
-    Vector = Matrix
 
     '''
     '''
@@ -81,17 +71,49 @@ def cells():
     '''
     '''
 
+    # define the matrices A and B, and the vecs v and w
     A = Matrix([[1,3],
                 [4,5]])
     B = Matrix([[-1,0],
                 [ 3,3]])
-    v = Vector([[1,2]]).T
+    v = Matrix([[1,2]]).T     # the .T makes v a column vector
+    w = Matrix([[-3,-4]]).T
+
+    '''
+    '''
+
+    # a)
+    A*v
+
+    '''
+    '''
+
+    # b)
+    B*v
+
+    '''
+    '''
+
+    # c)
+    A*B*v
 
     '''
     '''
 
     # d)
     B*A*v
+
+    '''
+    '''
+
+    # e)
+    A*w
+
+    '''
+    '''
+
+    # f)
+    B*w
 
     '''
     '''

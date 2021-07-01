@@ -1,15 +1,29 @@
 def cells():
+    '''
+    # 4/ Problem solutions
+    '''
 
     '''
     '''
 
+    # helper code needed for running in colab
+    if 'google.colab' in str(get_ipython()):
+        print('Downloading plot_helpers.py to util/ (only neded for colab')
+        !mkdir util; wget https://raw.githubusercontent.com/minireference/noBSLAnotebooks/master/util/plot_helpers.py -P util
+
+    '''
+    '''
+
+    # setup SymPy
     from sympy import *
     init_printing()
     
-    %matplotlib notebook
+    # setup plotting
+    %matplotlib inline
     import matplotlib.pyplot as mpl
-    from util.plot_helpers import plot_augmat, plot_plane, plot_point, plot_line, plot_vec, plot_vecs
+    from util.plot_helpers import plot_plane, plot_line, plot_vec, plot_vecs
     
+    # aliases
     Vector = Matrix  # define alias Vector so I don't have to explain this during video
     Point = Vector   # define alias Point for Vector since they're the same thing
 
@@ -130,12 +144,12 @@ def cells():
 
     v = Vector([3,   4,  1])
     normal = Vector([2,   -1,  4])
-    D=4
+    D = 4
     
     # some point on P
     p0 = Point([2,0,0])
     
-    u = v-p0  # vector from p0 to tip of v
+    u = v - p0  # vector from p0 to tip of v
     
     uPperp = (normal.dot(u)/normal.norm()**2)*normal
     print('uPperp', uPperp)

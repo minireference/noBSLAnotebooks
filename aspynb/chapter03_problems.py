@@ -1,6 +1,6 @@
 def cells():
     '''
-    ## Chapter 3 problems
+    # 3/ Problem solutions
     '''
 
     '''
@@ -16,33 +16,71 @@ def cells():
     '''
     '''
 
+    '''
+    ## P3.1
+    '''
+
+    '''
+    '''
+
+    AUG = Matrix([
+        [1, 5,   25],
+        [2, 1,   32]])
+    AUG
+
+    '''
+    '''
+
+    AUG.rref()
+
+    '''
+    '''
+
+
+    '''
+    '''
+
+    '''
+    ## P3.2
+    
+    In the above solution we showed how to build `AUG` matrix directly.
+    This time, we'll build `AUG` by row-joining (`row_join`) a matrix of coefficients and a vector of constants.
+    '''
+
+    '''
+    '''
+
     A = Matrix([
-    [3,     3],
-    [2, S(3)/2]])
+        [3,       3],
+        [2,  S(3)/2]])
     A
 
     '''
     '''
 
-    b = Matrix([6,5])
+    b = Matrix([6,5])  # b is a column vector
+    b
 
     '''
     '''
 
+    # row-join A and b to obtain the augmented matrix
     AUG = A.row_join(b)
-    AUG # the augmented matrix
+    AUG
 
     '''
     '''
 
     '''
-    ### Alice
+    ### a) Alice
+    
+    Let's obtain the matrix `AUGA` which is the result after Alice's row operation.
     '''
 
     '''
     '''
 
-    AUGA = AUG.copy()
+    AUGA = AUG.copy()  # make a copy of AUG
     AUGA[0,:] = AUGA[0,:]/3
     AUGA
 
@@ -68,7 +106,7 @@ def cells():
     '''
 
     '''
-    ### Bob
+    ### b) Bob
     '''
 
     '''
@@ -104,7 +142,7 @@ def cells():
     '''
 
     '''
-    ### Charlotte
+    ### c) Charlotte
     '''
 
     '''
@@ -141,24 +179,28 @@ def cells():
     '''
     '''
 
+
     '''
-    ### P3.3
+    '''
+
+    '''
+    ## P3.3
     '''
 
     '''
     '''
 
     # define agmented matrices for three systems of eqns. with unique sol'ns
-    A = Matrix([
+    AUGA = Matrix([
             [ -1, -2, -2],
             [  3, 3, 0]])
-            
-    B = Matrix([
+    
+    AUGB = Matrix([
             [ 1, -1, -2,  1],
             [-2,  3,  3, -1],
             [-1,  0,  1,  2]])
     
-    C = Matrix([
+    AUGC = Matrix([
             [ 2, -2,  3, 2],
             [ 1, -2, -1, 0],
             [-2,  2,  2, 1]])
@@ -166,87 +208,78 @@ def cells():
     '''
     '''
 
-    A
+    AUGA
 
     '''
     '''
 
-    A.rref()
+    AUGA.rref()
 
     '''
     '''
 
-    B
+    AUGB
 
     '''
     '''
 
-    B.rref()
+    AUGB.rref()
 
     '''
     '''
 
-    C
+    AUGC
 
     '''
     '''
 
-    C.rref()
+    AUGC.rref()
+
+    '''
+    '''
+
 
     '''
     '''
 
     '''
-    ### P3.4
-    '''
-
-    '''
-    '''
-
-    # now for three systems of eqns. with infinitely many sol'ns
-    D = Matrix([
-            [ -1, -2, -2],
-            [  3, 6,   6]])
-            
-    E = Matrix([
-            [ 1, -1, -2,  1],
-            [-2,  3,  3, -1],
-            [-1,  2,  1,  0]])
+    ## P3.4
     
-    F = Matrix([
-            [ 2, -2, 3, 2],
-            [ 0,  0, 5, 3],
-            [-2,  2, 2, 1]])
-
-    '''
-    '''
-
-    '''
-    ### Solving d)
+    These three systems of equations have infinitely many solutions.
     '''
 
     '''
     '''
 
-    D
+    '''
+    ### P3.4 a)
+    '''
 
     '''
     '''
 
-    D.rref()
+    AUGA = Matrix([
+        [ -1, -2,  -2],
+        [  3,  6,   6]])
+    AUGA
 
     '''
     '''
 
-    D[0:2,0:2].nullspace()
+    AUGA.rref()
 
     '''
     '''
 
-    # the solutions to the sytem of equations represented by D
+    AUGA[0:2,0:2].nullspace()
+
+    '''
+    '''
+
+    # the solutions to the sytem of equations represented by AUGA
     # is of the form    point + nullspace
-    point = D.rref()[0][:,2]
-    nullspace = D[0:2,0:2].nullspace()
+    point = AUGA.rref()[0][:,2]
+    nullspace = AUGA[0:2,0:2].nullspace()
 
     '''
     '''
@@ -257,21 +290,21 @@ def cells():
     '''
     '''
 
-    # if A aug matrix is [A|b], then the point satisfies A*point = b.
-    print( D[0:2,0:2]*point == D[:,2] )
-    D[0:2,0:2]*point
+    # if the augmented matrix AUGA is [A|b], then the point satisfies A*point = b
+    print( AUGA[0:2,0:2]*point == AUGA[:,2] )
+    AUGA[0:2,0:2]*point
 
     '''
     '''
 
     '''
-    ### Null space
+    #### Finding the null space
     '''
 
     '''
     '''
 
-    # the nullspace of A in aug. matrix [A|b] is one dimensional and spanned by
+    # the nullspace of A is one dimensional and spanned by
     n = nullspace[0]
     n
     # every vector n in the nullspace of A satisfies  A*n=0
@@ -280,61 +313,73 @@ def cells():
     '''
 
     # so solution to A*x=b is any (point+s*n) where s is any real number
-    # since  A*(point +s*n) = A*point + sA*n = A*point + 0 = b.
-    # verify claim for 20 values of s in range -5,-4,-3,-2,-1,0,1,2,3,4,5
+    # since  A*(point+s*n) = A*point + sA*n = A*point + 0 = b.
+    # Let's verify claim for values of s in the range -5,-4,-3,-2,-1,0,1,2,3,4,5
     for s in range(-5,6):
-        print( D[0:2,0:2]*(point + s*n), 
-               D[0:2,0:2]*(point + s*n) == D[:,2] )
+        print( AUGA[0:2,0:2]*(point + s*n), 
+               AUGA[0:2,0:2]*(point + s*n) == AUGA[:,2] )
 
     '''
     '''
 
     '''
-    ### Solving e)
+    ### P3.4 b)
     '''
 
     '''
     '''
 
-    E
+    AUGB = Matrix([
+            [ 1, -1, -2,   1],
+            [-2,  3,  3,  -1],
+            [-1,  2,  1,   0]])
+    AUGB
 
     '''
     '''
 
-    E.rref()
+    AUGB.rref()
 
     '''
     '''
 
-    point_E = E.rref()[0][:,3]
-    nullspace_E = E[0:3,0:3].nullspace()[0]
+    point_B = AUGB.rref()[0][:,3]
+    nullspace_B = AUGB[0:3,0:3].nullspace()[0]
     s = symbols('s')
-    point_E + s*nullspace_E
+    point_B + s*nullspace_B
 
     '''
     '''
 
     '''
-    ### Solving f)
+    ### P3.4 c)
     '''
 
     '''
     '''
 
-    F
+    AUGC = Matrix([
+            [ 2, -2, 3,  2],
+            [ 0,  0, 5,  3],
+            [-2,  2, 2,  1]])
+    AUGC
 
     '''
     '''
 
-    F.rref()
+    AUGC.rref()
 
     '''
     '''
 
-    point_F = F.rref()[0][:,3]
-    nullspace_F = F[0:3,0:3].nullspace()[0]
+    point_C = AUGC.rref()[0][:,3]
+    nullspace_C = AUGC[0:3,0:3].nullspace()[0]
     s = symbols('s')
-    point_F + s*nullspace_F
+    point_C + s*nullspace_C
+
+    '''
+    '''
+
 
     '''
     '''

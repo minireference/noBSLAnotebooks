@@ -1,8 +1,23 @@
 def cells():
+    '''
+    # 4/ Exercise solutions
+    '''
+
+    '''
+    '''
+
+    # helper code needed for running in colab
+    if 'google.colab' in str(get_ipython()):
+        print('Downloading plot_helpers.py to util/ (only neded for colab')
+        !mkdir util; wget https://raw.githubusercontent.com/minireference/noBSLAnotebooks/master/util/plot_helpers.py -P util
+
+    '''
+    '''
+
     from sympy import *
     init_printing()
     
-    %matplotlib notebook
+    %matplotlib inline
     import matplotlib.pyplot as mpl
     from util.plot_helpers import plot_augmat, plot_plane, plot_point, plot_line, plot_vec, plot_vecs
     

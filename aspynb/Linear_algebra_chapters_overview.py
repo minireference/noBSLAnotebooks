@@ -60,6 +60,14 @@ def cells():
     '''
     '''
 
+    # helper code needed for running in colab
+    if 'google.colab' in str(get_ipython()):
+        print('Downloading plot_helpers.py to util/ (only neded for colab')
+        !mkdir util; wget https://raw.githubusercontent.com/minireference/noBSLAnotebooks/master/util/plot_helpers.py -P util
+
+    '''
+    '''
+
     # setup SymPy
     from sympy import *
     x, y, z, t = symbols('x y z t')
@@ -499,7 +507,7 @@ def cells():
     '''
     '''
 
-    a,b,c,d  = symbols('a b c d')
+    a, b, c, d  = symbols('a b c d')
     A = Matrix([[a,b],
                 [c,d]])
     
@@ -570,7 +578,13 @@ def cells():
 
     # Compute deteminant to check if inverse matrix exists
     A.det()
-    # if non-zero, then inverse exists
+
+    '''
+    '''
+
+    '''
+    The deteminant is non-zero so inverse exists.
+    '''
 
     '''
     '''
@@ -620,7 +634,7 @@ def cells():
     '''
     '''
 
-    # performd row operations
+    # perform row operations until left side of AUG is in RREF
     AUG[1,:] = AUG[1,:] - 3*AUG[0,:]
     AUG[1,:] = AUG[1,:]/3
     AUG[0,:] = AUG[0,:] - 2*AUG[1,:]
@@ -629,7 +643,14 @@ def cells():
     '''
     '''
 
-    AUG[:,2:5]
+    # the inverse of A is in the right side of RREF(AUG)
+    AUG[:,2:5]  # == A-inverse
+
+    '''
+    '''
+
+    # verify A times A-inverse gives the identity matrix...
+    A*AUG[:,2:5]
 
     '''
     '''
@@ -652,7 +673,7 @@ def cells():
     E3 = eye(2)
     E3[0,:] = E3[0,:] - 2*E3[1,:]
     
-    E1,E2,E3
+    E1, E2, E3
 
     '''
     '''

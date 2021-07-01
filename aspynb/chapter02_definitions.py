@@ -1,5 +1,12 @@
 def cells():
-    # Helper code needed when running on colab...
+    '''
+    # 2/ Definitions
+    '''
+
+    '''
+    '''
+
+    # helper code needed for running in colab
     if 'google.colab' in str(get_ipython()):
         print('Downloading plot_helpers.py to util/ (only neded for colab')
         !mkdir util; wget https://raw.githubusercontent.com/minireference/noBSLAnotebooks/master/util/plot_helpers.py -P util
