@@ -4,6 +4,12 @@ oldvenv
 
 inspiration
 
+# Drafts and cut material
+cut_material/other_stuff.md
+extra/determinant.md
+extra/solution_to_P319b.py
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
