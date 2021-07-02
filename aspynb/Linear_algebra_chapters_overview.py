@@ -442,7 +442,7 @@ def cells():
     '''
 
     '''
-    page 150
+    See **page 177** in v2.2 of the book.
     '''
 
     '''
@@ -780,8 +780,8 @@ def cells():
     '''
     '''
 
-    # plot plane     2x + y + z = 5
-    normal = Vector([2,   1,  1])
+    # plot plane     2x + 1y + 1z = 5
+    normal = Vector([2,   1,   1])
     D = 5
     
     plot_plane(normal, D)
@@ -850,7 +850,7 @@ def cells():
     '''
 
     '''
-    page 194
+    See [page 225](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=68) in v2.2 of the book:
     
       - Different types of bases
         - Orthonormal
@@ -870,7 +870,7 @@ def cells():
     '''
 
     '''
-    page 199
+    See **page 231** in v2.2 of the book.
     '''
 
     '''
@@ -884,7 +884,7 @@ def cells():
     '''
 
     '''
-    page 211
+    See **page 244** in the book.
     '''
 
     '''
@@ -905,7 +905,7 @@ def cells():
     '''
 
     '''
-    page 223
+    See [page 257](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=70) in v2.2 of the book.
     '''
 
     '''
@@ -1017,7 +1017,7 @@ def cells():
     '''
 
     '''
-    page 234
+    See [page 269](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=74) in v2.2 of the book.
     '''
 
     '''
@@ -1033,7 +1033,7 @@ def cells():
     '''
     ## Invertible matrix theorem 
     
-    page 250
+    See [page 288](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=78) in the book.
     '''
 
     '''
@@ -1146,7 +1146,7 @@ def cells():
     '''
 
     '''
-    page 271
+    See [page 312](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=83) in v2.2 of the book.
     '''
 
     '''
@@ -1169,7 +1169,7 @@ def cells():
     '''
     Generalize vector techniques to other vector like quantities. Allow us to talk about basis, dimention, etc.
     
-    page 277
+    See [page 318](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=84) in the book.
     '''
 
     '''
@@ -1192,7 +1192,7 @@ def cells():
     '''
     Use geometrical notions like length and orthogonaloty for abstract vectors.
     
-    page 281
+    See **page 322** in the book.
     '''
 
     '''
@@ -1213,7 +1213,7 @@ def cells():
     '''
 
     '''
-    page 288
+    See **page 328**.
     '''
 
     '''
@@ -1234,7 +1234,7 @@ def cells():
     '''
 
     '''
-    page 292
+    See **page 332**.
     '''
 
     '''
@@ -1255,7 +1255,7 @@ def cells():
     '''
 
     '''
-    page 298
+    See [page 339](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=88) in v2.2 of the book.
     '''
 
     '''
@@ -1269,14 +1269,14 @@ def cells():
     '''
 
     '''
-    # Applications
+    # Applications chapters
     '''
 
     '''
     '''
 
     '''
-      - Chapter 7: General applications
+      - Chapter 7: Applications
       - Chapter 8: Probability theory
       - Chapter 9: Quantum mechanics
     '''
@@ -1299,7 +1299,7 @@ def cells():
     '''
 
     '''
-    Check out page 499 for notation.
+    Check out [page 571](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=142) in the book.
     '''
 
     '''

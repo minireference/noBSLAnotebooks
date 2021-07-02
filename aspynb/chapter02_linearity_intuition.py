@@ -118,7 +118,7 @@ def cells():
        T: \mathbb{R}^n \to \mathbb{R}^m.
     $$
     
-    see page 116 in book
+    See [page 136](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=43) in v2.2 of the book.
     '''
 
     '''
@@ -158,7 +158,7 @@ def cells():
     '''
 
     '''
-    see page 133 in v5.4 of the book
+    See [page 133](https://minireference.com/static/excerpts/noBSLA_v2_preview.pdf#page=40) in v2.2 of the book.
     '''
 
     '''
