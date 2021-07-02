@@ -372,14 +372,17 @@ def cells():
     '''
     '''
 
-    point_C = AUGC.rref()[0][:,3]
+    constants = AUGC.rref()[0][:,3]
+    
+    # construct point_C by placing the constants into the location of the pivots
+    pivots = AUGC.rref()[1]
+    point_C = zeros(3,1)
+    for idx, pivot in enumerate(pivots):
+        point_C[pivot] = constants[idx]
+    
     nullspace_C = AUGC[0:3,0:3].nullspace()[0]
     s = symbols('s')
     point_C + s*nullspace_C
-
-    '''
-    '''
-
 
     '''
     '''
