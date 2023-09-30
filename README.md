@@ -9,7 +9,7 @@ by Ivan Savov (Minireference Co.,  v2.2 2021, ISBN 0992001021).
 The book is available in both print and digital formats:
  • softcover print from lulu.com [bit.ly/noBSLA-sc](https://bit.ly/noBSLA-sc)
  • hardcover print from lulu.com [bit.ly/noBSLA-hc](https://bit.ly/noBSLA-hc)
- • softcover print from amazon: [amzn.com/dp/0992001021](https://amzn.com/dp/0992001021)
+ • softcover print from amazon: [amazon.com/dp/0992001021](https://amazon.com/dp/0992001021)
  • digital download from gumroad: [gum.co/noBSLA](https://gum.co/noBSLA).
 For more info, visit the book’s website [minireference.com](https://minireference.com).
 
